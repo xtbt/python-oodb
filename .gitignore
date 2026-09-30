@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+objectbox-example/data/
+objectbox-example/objectbox-model.json
+zodb-example/data/
+durus-example/data/
+*.fs
+*.fs.lock
+*.fs.tmp
+*.fs.index
