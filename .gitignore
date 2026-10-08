@@ -9,3 +9,4 @@ durus-example/data/
 *.fs.lock
 *.fs.tmp
 *.fs.index
+data/
