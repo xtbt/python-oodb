@@ -7,7 +7,7 @@ registers all routes, and starts listening for requests.
 
 import sys
 import os
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 
 # -- Ensure the project root is in the Python path --
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -151,7 +151,7 @@ def main():
     register_routes(_router)
 
     # -- Create and start the HTTP server --
-    server = HTTPServer((Config.HOST, Config.PORT), APIRequestHandler)
+    server = ThreadingHTTPServer((Config.HOST, Config.PORT), APIRequestHandler)
     print(f"API server running on http://{Config.HOST}:{Config.PORT}{Config.API_PREFIX}")
     print("Press Ctrl+C to stop.\n")
 
